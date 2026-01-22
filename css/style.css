@@ -7,7 +7,9 @@
     --indicator-width: 80px;
     --primary-color: #0C1944;
 }
-
+html,body{
+    overflow-x: hidden;
+}
 body {
     font-family: var(--font-cairo);
     overflow-x: hidden;
