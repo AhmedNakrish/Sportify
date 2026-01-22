@@ -7,13 +7,16 @@
     --indicator-width: 80px;
     --primary-color: #0C1944;
 }
-html,body{
+
+html,
+body {
     overflow-x: hidden;
 }
+
 body {
     font-family: var(--font-cairo);
     overflow-x: hidden;
-   
+
 }
 
 /* ==================
@@ -52,6 +55,7 @@ body {
     color: #555;
     font-weight: 700;
 }
+
 .navbar {
     height: 90px;
     z-index: 100;
@@ -66,11 +70,15 @@ body {
     display: flex;
     align-items: center;
 }
+
+@media (min-width: 992px) {
     .navbar-expand-lg .navbar-collapse {
         display: flex !important;
         flex-basis: auto;
         justify-content: space-between;
     }
+}
+
 .nav-link {
     color: rgba(255, 255, 255, 0.7) !important;
     font-weight: 600;
@@ -98,12 +106,12 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-     transition:all ease 0.3s;
+    transition: all ease 0.3s;
 }
 
 .icon-link:hover {
     background-color: var(--accent-orange);
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
 .cart-wrapper {
@@ -246,7 +254,10 @@ body {
     font-size: 1.5rem;
     transform: scale(1.1);
 }
-
+ .navbarmob.container.d-flex.align-items-center.h-100 {
+    display: flex;
+    justify-content: space-between !important;
+}
 /* Responsive */
 @media (max-width: 991px) {
     .navbar {
@@ -281,6 +292,30 @@ body {
     .navbar {
         background: var(--primary-blue);
     }
+
+    .navbar-collapse {
+        background-color: var(--primary-blue);
+        padding: 1rem;
+        text-align: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        /* Optional: Add shadow/border */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+
+    .navbar-icons {
+        justify-content: center;
+        margin-top: 1rem;
+        width: 100%;
+    }
+   
 }
 
 /* ==================
@@ -290,16 +325,19 @@ body {
     background-color: #f8f9fa;
     padding: 80px 0;
 }
+
 .prod-section-title {
     color: var(--primary-color);
     font-size: 32px;
 }
+
 .products-header {
     border: 3px solid var(--primary-color);
     width: fit-content;
     margin: auto;
     padding: 25px 48px;
 }
+
 .prod-section-subtitle.text-muted {
     font-size: 1.1rem;
     color: var(--primary-color);
@@ -321,7 +359,8 @@ body {
 
 .product-image-container {
     position: relative;
-    padding-top: 100%; /* 1:1 Aspect Ratio */
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio */
     overflow: hidden;
     background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
 }
@@ -335,11 +374,13 @@ body {
     object-fit: cover;
     transition: transform 0.3s ease;
 }
+
 .product-desc {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .product-card:hover .product-image {
     transform: scale(1.05);
 }
@@ -365,16 +406,19 @@ body {
     margin-bottom: 0.75rem;
     line-height: 1.4;
 }
+
 .product-rating i {
     color: #ffc107;
     font-size: 0.8rem;
     margin-left: 2px;
 }
+
 .product-rate {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .product-category {
     font-size: 0.9rem;
     color: #6c757d;
@@ -548,15 +592,15 @@ body {
     .fitness-showcase {
         padding: 60px 0;
     }
-    
+
     .fitness-main {
         min-height: 400px;
     }
-    
+
     .promo-title {
         font-size: 1.3rem;
     }
-    
+
     .promo-text {
         font-size: 0.9rem;
     }
@@ -566,19 +610,19 @@ body {
     .fitness-showcase {
         padding: 40px 0;
     }
-    
+
     .fitness-main {
         min-height: 300px;
     }
-    
+
     .promo-card {
         padding: 1.5rem;
     }
-    
+
     .promo-title {
         font-size: 1.2rem;
     }
-    
+
     .btn-promo {
         padding: 8px 20px;
         font-size: 0.85rem;
@@ -623,6 +667,7 @@ body {
     margin-bottom: 30px;
     width: fit-content;
 }
+
 .footer-description {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -637,11 +682,13 @@ body {
     gap: 15px;
     margin-bottom: 35px;
 }
+
 .tax-icon {
     width: 22px;
     height: 30px;
     object-fit: contain;
 }
+
 .tax-number {
     font-size: 12px;
     margin: 0;
@@ -656,7 +703,7 @@ body {
 }
 
 .payment-methods img {
-     width: 46px;
+    width: 46px;
     height: 15px;
     transition: opacity 0.3s ease;
 }
@@ -719,7 +766,7 @@ body {
 
 .contact-item i {
     font-size: 1.3rem;
-    color:#FFFFFF;
+    color: #FFFFFF;
     width: 25px;
     text-align: center;
 }
@@ -733,6 +780,7 @@ body {
     justify-content: center;
     align-items: baseline;
 }
+
 .payment-card {
     width: 60px;
     height: 31px;
@@ -741,6 +789,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .newsletter-input {
     background: transparent;
     color: white;
@@ -774,10 +823,12 @@ body {
     display: flex;
     align-items: baseline;
 }
+
 .arrow-sub {
     transform: rotate(45deg);
 }
-.newsletter-btn:hover { 
+
+.newsletter-btn:hover {
     transform: translateY(-2px);
 }
 
@@ -850,6 +901,7 @@ body {
     font-size: 2rem;
     color: #e74c3c;
 }
+
 .sub-text {
     white-space: nowrap;
 }
@@ -860,22 +912,22 @@ body {
         padding: 45px 30px;
         min-height: auto;
     }
-    
+
     .footer-logo {
         height: 65px;
         margin-bottom: 25px;
     }
-    
+
     .footer-heading {
         font-size: 1.4rem;
         margin-bottom: 30px;
     }
-    
+
     .footer-description {
         font-size: 1rem;
         margin-bottom: 30px;
     }
-    
+
     .payment-methods img {
         height: 40px;
     }
@@ -885,34 +937,34 @@ body {
     .footer-col {
         padding: 40px 25px;
     }
-    
+
     .footer-logo {
         height: 60px;
     }
-    
+
     .footer-heading {
         font-size: 1.3rem;
     }
-    
+
     .footer-description {
         font-size: 0.95rem;
     }
-    
+
     .contact-item,
     .footer-links a {
         font-size: 1rem;
     }
-    
+
     .social-link {
         width: 45px;
         height: 45px;
         font-size: 1.2rem;
     }
-    
+
     .app-images img {
         height: 45px;
     }
-    
+
     .cert-text {
         font-size: 1rem;
     }
