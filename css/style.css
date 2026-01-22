@@ -1,0 +1,912 @@
+:root {
+    --primary-blue: #0e1625;
+    --accent-orange: #E43A19;
+    --text-white: #ffffff;
+    --font-cairo: 'Tajawal';
+    --countdown-bg: #e2e2e2;
+    --indicator-width: 80px;
+    --primary-color: #0C1944;
+}
+
+body {
+    font-family: var(--font-cairo);
+    overflow-x: hidden;
+   
+}
+
+/* ==================
+   Top Bar
+   ================== */
+.top-bar {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 101;
+    /* Above Navbar */
+}
+
+.header-countdown {
+    font-family: 'Courier New', Courier, monospace;
+    /* Digital feel */
+    background: transparent;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    /* Mimic the box look slightly */
+    padding: 0 5px;
+    background: var(--countdown-bg);
+    margin-right: 10px;
+}
+
+.time-box {
+    margin: 0 1px;
+}
+
+.discount-text {
+    color: #555;
+    font-weight: 700;
+}
+.navbar {
+    height: 90px;
+    z-index: 100;
+    /* Split: 7 cols (Image/Right) vs 5 cols (Text/Left). 7/12 = 58.333% */
+    /* RTL: Right (0%) to Left (100%). Orange is on Right. Blue is on Left. */
+    background: linear-gradient(to left, var(--accent-orange) 58.333%, var(--primary-blue) 58.333%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    /* Logo should be on right, in orange area */
+    display: flex;
+    align-items: center;
+}
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: space-between;
+    }
+.nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 600;
+    padding: 0 1rem !important;
+    transition: all 0.3s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: white !important;
+}
+
+.navbar-icons {
+    color: white;
+}
+
+.icon-link {
+    color: #071339;
+    font-size: 1.25rem;
+    background-color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+     transition:all ease 0.3s;
+}
+
+.icon-link:hover {
+    background-color: var(--accent-orange);
+    color:#FFFFFF;
+}
+
+.cart-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--accent-orange) !important;
+    border: 1px solid white;
+    font-size: 0.7rem;
+    padding: 0.25em 0.5em;
+}
+
+
+/* ==================
+   Hero Section
+   ================== */
+.hero-section {
+    min-height: calc(100vh - 130px);
+    /* Adjust for topbar + nav height approx */
+    background-color: var(--primary-blue);
+    overflow: hidden;
+}
+
+/* Text Side (Left Visual) */
+.hero-content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    z-index: 5;
+    position: relative;
+}
+
+/* Outline Text "الراحة في" */
+.outline-text-bg {
+    position: absolute;
+    top: 50%;
+    /* Center vertically approx */
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 10rem;
+    font-weight: 900;
+    line-height: 0.9;
+
+    /* Hollow Text Styling */
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+    font-family: var(--font-cairo);
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+    text-align: center;
+}
+
+.hero-main-title {
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.hero-desc {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Orange Box Bottom Left */
+/* Orange Box Bottom Left */
+.orange-box-bottom-left {
+    position: absolute;
+    bottom: -40px;
+    /* Slight offset downwards for design nuance */
+    left: 0;
+    width: 250px;
+    height: 180px;
+    background-color: var(--accent-orange);
+    z-index: 10;
+}
+
+
+/* Button */
+.btn-custom-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 10px 40px;
+    background: transparent;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.btn-custom-outline:hover {
+    background: white;
+    color: var(--primary-blue);
+    border-color: white;
+}
+
+
+/* Image Side (Right Visual) */
+.hero-image-container {
+    background-color: var(--accent-orange);
+    height: 100%;
+    width: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sidebar Right */
+.sidebar-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: var(--indicator-width);
+    /* Dark semi-transparent overlay to ensure indicators (white text) are readable */
+    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-orange);
+    /* Or darker shade */
+    background-color: #a0330d;
+    /* Slightly darker orange for depth? */
+    background: linear-gradient(to bottom, var(--accent-orange), #a0330d);
+    z-index: 20;
+}
+
+.indicator {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.indicator.active {
+    color: white;
+    font-size: 1.5rem;
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .navbar {
+        background: var(--primary-blue);
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .hero-section {
+        height: auto;
+    }
+
+    .orange-box-bottom-left {
+        display: none;
+        /* Hide on mobile often */
+    }
+
+    .sidebar-right {
+        display: none;
+        /* Hide styling on mobile */
+    }
+
+    .outline-text-bg {
+        font-size: 5rem;
+    }
+
+    .hero-main-title {
+        font-size: 2.5rem;
+    }
+
+    /* Reset gradient on mobile */
+    .navbar {
+        background: var(--primary-blue);
+    }
+}
+
+/* ==================
+   Products Section
+   ================== */
+.products-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+.prod-section-title {
+    color: var(--primary-color);
+    font-size: 32px;
+}
+.products-header {
+    border: 3px solid var(--primary-color);
+    width: fit-content;
+    margin: auto;
+    padding: 25px 48px;
+}
+.prod-section-subtitle.text-muted {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+.product-card {
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-image-container {
+    position: relative;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.product-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+    margin-bottom: 0.5rem;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+.product-rating i {
+    color: #ffc107;
+    font-size: 0.8rem;
+    margin-left: 2px;
+}
+.product-rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-category {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .navbar {
+        background: var(--primary-blue);
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .hero-section {
+        height: auto;
+    }
+
+    .orange-box-bottom-left {
+        display: none;
+        /* Hide on mobile often */
+    }
+
+    .sidebar-right {
+        display: none;
+        /* Hide styling on mobile */
+    }
+
+    .outline-text-bg {
+        font-size: 5rem;
+    }
+
+    .hero-main-title {
+        font-size: 2.5rem;
+    }
+
+    /* Reset gradient on mobile */
+    .navbar {
+        background: var(--primary-blue);
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .products-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .product-info {
+        padding: 1rem;
+    }
+
+    .product-price {
+        font-size: 1.25rem;
+    }
+
+    .product-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==================
+   Fitness Showcase Section
+   ================== */
+.fitness-showcase {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.fitness-card {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.fitness-card:hover {
+    transform: translateY(-5px);
+}
+
+.fitness-main {
+    min-height: 600px;
+}
+
+.fitness-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.fitness-card:hover .fitness-image {
+    transform: scale(1.05);
+}
+
+/* Promo Cards */
+.promo-card {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+}
+
+.promo-orange {
+    background: linear-gradient(135deg, var(--accent-orange) 0%, #d95020 100%);
+}
+
+.promo-blue {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1a2951 100%);
+}
+
+.promo-content {
+    position: relative;
+    z-index: 2;
+}
+
+.promo-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.promo-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.btn-promo {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 25px;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-promo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: var(--accent-orange);
+}
+
+/* Fitness Showcase Responsive */
+@media (max-width: 991px) {
+    .fitness-showcase {
+        padding: 60px 0;
+    }
+    
+    .fitness-main {
+        min-height: 400px;
+    }
+    
+    .promo-title {
+        font-size: 1.3rem;
+    }
+    
+    .promo-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .fitness-showcase {
+        padding: 40px 0;
+    }
+    
+    .fitness-main {
+        min-height: 300px;
+    }
+    
+    .promo-card {
+        padding: 1.5rem;
+    }
+    
+    .promo-title {
+        font-size: 1.2rem;
+    }
+    
+    .btn-promo {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ==================
+   Footer Section
+   ================== */
+.footer {
+    font-family: var(--font-cairo);
+    direction: rtl;
+}
+
+.footer-col {
+    padding: 60px 40px;
+    min-height: 500px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-col-red {
+    background-color: var(--accent-orange);
+    color: white;
+}
+
+.footer-col-blue {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.footer-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer Logo and Description */
+.footer-logo {
+    height: 60px;
+    margin-bottom: 30px;
+    width: fit-content;
+}
+.footer-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+/* Tax Info */
+.tax-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+.tax-icon {
+    width: 22px;
+    height: 30px;
+    object-fit: contain;
+}
+.tax-number {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Payment Methods */
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.payment-methods img {
+     width: 46px;
+    height: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.payment-methods img:hover {
+    opacity: 1;
+}
+
+/* Footer Headings */
+.footer-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 35px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 18px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    transform: translateX(-5px);
+    color: #e74c3c;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.contact-item i {
+    font-size: 1.3rem;
+    color:#FFFFFF;
+    width: 25px;
+    text-align: center;
+}
+
+/* Newsletter */
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #FFFFFF5E;
+}
+.payment-card {
+    width: 60px;
+    height: 31px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newsletter-input {
+    background: transparent;
+    color: white;
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-align: right;
+    border: none;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #e74c3c;
+}
+
+.newsletter-btn {
+    color: #e74c3c;
+    border: none;
+    padding: 18px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.arrow-sub {
+    transform: rotate(45deg);
+}
+.newsletter-btn:hover { 
+    transform: translateY(-2px);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.3rem;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom .footer-col {
+    min-height: 150px;
+    padding: 35px 40px;
+}
+
+/* App Images */
+.app-images {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.app-images img {
+    height: 50px;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.app-images img:hover {
+    opacity: 1;
+}
+
+/* Certification */
+.certification {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.cert-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.certification i {
+    font-size: 2rem;
+    color: #e74c3c;
+}
+
+/* Footer Responsive */
+@media (max-width: 991px) {
+    .footer-col {
+        padding: 45px 30px;
+        min-height: auto;
+    }
+    
+    .footer-logo {
+        height: 65px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-heading {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+    }
+    
+    .footer-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .payment-methods img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-col {
+        padding: 40px 25px;
+    }
+    
+    .footer-logo {
+        height: 60px;
+    }
+    
+    .footer-heading {
+        font-size: 1.3rem;
+    }
+    
+    .footer-description {
+        font-size: 0.95rem;
+    }
+    
+    .contact-item,
+    .footer-links a {
+        font-size: 1rem;
+    }
+    
+    .social-link {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .app-images img {
+        height: 45px;
+    }
+    
+    .cert-text {
+        font-size: 1rem;
+    }
+}
